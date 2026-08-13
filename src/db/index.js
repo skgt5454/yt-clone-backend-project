@@ -14,9 +14,10 @@ const connectDB = async () =>{
         //Node recommend karta hai ki process ko naturally exit hone do age directly bnd kr diya to kuch incomplete rh jayenge
     }
 }
-//console.log(connectionInstance)
 export default connectDB
 
+
+// jo humne code likha h database se baat krne ke liye isko baar baar use krnege database se baat krne ke liye kyu na hum ise ek function me likhkar ek utility me daal de
 
 
 

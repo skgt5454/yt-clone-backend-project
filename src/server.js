@@ -6,7 +6,14 @@
 import connectDB from "./db/index.js"
 // dotenv.config({path: './.env'}) // ye usko solve krke likha gya h
 connectDB()
-console.log(process.env.MONGODB_URI);
+.then(()=>{
+    app.listen(process.env.PORT || 8000,()=>{console.log(`app is run at port:${process.env.PORT}`)})
+     app.on("error",(err)=>{console.log(`error is occured on the port is:${err}`)
+        throw err;
+     })
+})
+.catch((err)=>{console.log("mongodb connection failed :",err)
+})
 
 
 
