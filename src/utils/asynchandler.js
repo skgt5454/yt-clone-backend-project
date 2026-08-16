@@ -25,9 +25,8 @@ export {asynchandler}
 
 
 
-
 // ye try catch wala tha
-// const asynchandler = (fn)=> async (req,res,next)=>{
+// const asynchandler =(fn)=> async (req,res,next)=>{
 //     try{
 //          await fn(req,res,next)
 //     }
@@ -37,5 +36,5 @@ export {asynchandler}
 //             message:err.message
 //         })// ye usually hm status bhej dete hai agr user pass kr rha h to error.code likh dete h varna 500
 //     }
-// }
+// } 
 //export {consthandler}
