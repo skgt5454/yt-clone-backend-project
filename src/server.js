@@ -4,12 +4,14 @@
 // agr mainfile me availabe ho gye to sari files ko excess mil jaye
 import dotenv from "dotenv" // iswale syntax ko use krne ke liye  hum package.json me scrpits me -r dotenv/config so isse env direct load ho jayenge aur config environment load ho rha h. lekin hme ek experimental feature use krna pdega
 import connectDB from "./db/index.js"
-// dotenv.config({path: './env'}) // ye usko solve krke likha gya h
+import {app} from './app.js'
+dotenv.config() // ye usko solve krke likha gya h // ye basically .env file ke variables ko process.env me available kr deta h
+
+
 connectDB()
 .then(()=>{
-   app.listen(()=>{app.listen(process.env.port||8000,()=>{console.log(`server is running:${process.env.port}`)})
-   app.on((error)=>{console.log(`the error is occured:${error}`)})
-})
+   (app.listen(process.env.PORT,()=>{console.log(`server is running:${process.env.PORT}`)}))
+   app.on("error",(error)=>{console.log(`the error is occured:${error}`)})// on ko second argument ko function chahiye
 })
 .catch((err)=>{console.log("mongodb connection failed :",err)
 })

@@ -16,15 +16,14 @@ class ApiError extends Error{
      this.success = false
      this.errors = errors
 
-     if(statck){
-        this.stack = statck  //isse kya hota h jo backend likh rha h na use ek stacktrace mil jaye ki kon konsi files me dikkat h
+     if(stack){
+        this.stack = stack  //isse kya hota h jo backend likh rha h na use ek stacktrace mil jaye ki kon konsi files me dikkat h
      }
      else{
     Error.captureStackTrace(this,this.constructor);//first this → jis error object ka stack banana hai
 //second this.constructor → kis constructor call ko stack trace se exclude karna ha
-     }
+}
 // is code ki hme jrurat nhi h
-
     }
 }
 export {ApiError} 
