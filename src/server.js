@@ -10,7 +10,7 @@ dotenv.config() // ye usko solve krke likha gya h // ye basically .env file ke v
 
 connectDB()
 .then(()=>{
-   (app.listen(process.env.PORT,()=>{console.log(`server is running:${process.env.PORT}`)}))
+   (app.listen(process.env.PORT||8000,()=>{console.log(`server is running:${process.env.PORT||8000}`)}))
    app.on("error",(error)=>{console.log(`the error is occured:${error}`)})// on ko second argument ko function chahiye
 })
 .catch((err)=>{console.log("mongodb connection failed :",err)

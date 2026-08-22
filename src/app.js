@@ -17,8 +17,11 @@ app.use(express.static("public"))
 
 //routes import
 import userRouter from "./routes/user.router.js"
-app.use(express.json())
-app.use("/users",userRouter)
+app.use("/api/v1/users",userRouter)
+
+
+
+
 
 export { app }
 

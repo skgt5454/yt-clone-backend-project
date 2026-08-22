@@ -58,7 +58,7 @@ const userschema = new .Schema({
 )
 userschema.pre("save",async function(next){
     if(!this.isModified("password")){return next()} // iska mtlb agr password change nhi krna hai to next return kr dega// ye condition isliye lgayi taaki agr koi bnde ne password ke alaawa koi cheez change kri to save hoga to pura code chlega to baar password change hhr baar hoga
- this.password = bcrypt.hash(this.password,10)
+ this.password =await bcrypt.hash(this.password,10)
  next()
 }) 
 userschema.methods.ispasswordcorrect = async function(password)
